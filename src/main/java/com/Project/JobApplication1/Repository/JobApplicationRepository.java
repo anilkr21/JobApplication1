@@ -1,6 +1,8 @@
 package com.Project.JobApplication1.Repository;
 
 import com.Project.JobApplication1.model.JobPost;
+
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -9,62 +11,44 @@ import java.util.List;
 
 
 
+@SuppressWarnings("unused")
 @Repository
-public class JobApplicationRepository {
+public interface JobApplicationRepository extends JpaRepository<JobPost, Integer>{
 
-    List<JobPost> job =new ArrayList<>(Arrays.asList());
 
-    public  JobApplicationRepository(){
-        job.add(new JobPost(1, "Java Developer", "Must have good experience in core Java and advanced Java", 2,
-                List.of("Core Java", "J2EE","Spring Boot", "Hibernate")));
 
-        // Frontend Developer Job Post
-        job.add(
-                new JobPost(2, "Frontend Developer", "Experience in building responsive web applications using React",
-                        3, List.of("HTML", "CSS", "JavaScript", "React")));
 
-        // Data Scientist Job Post
-        job.add(new JobPost(3, "Data Scientist", "Strong background in machine learning and data analysis", 4,
-                List.of("Python", "Machine Learning", "Data Analysis")));
+//
+       
+//    }
+//    public List<JobPost> getposts() {
+//        return job;
+//    }
+//    public JobPost getpost(int postId) {
+//        for(JobPost jobs: job){
+//            if(jobs.getPostId()==postId)
+//                return jobs;
+//        }
+//        return null;
+//    }
+//
+//    public JobPost addjob(JobPost jobpost) {
+//        job.add(jobpost);
+//        return new JobPost();
+//    }
+// //
+//    public JobPost update(int postId, JobPost updatepost) {
 
-        // Network Engineer Job Post
-        job.add(new JobPost(4, "Network Engineer",
-                "Design and implement computer networks for efficient data communication", 5,
-                List.of("Networking", "Cisco", "Routing", "Switching")));
-
-        // Mobile App Developer Job Post
-        job.add(new JobPost(5, "Mobile App Developer", "Experience in mobile app development for iOS and Android",
-                3, List.of("iOS Development", "Android Development", "Mobile App")));
-
-    }
-    public List<JobPost> getposts() {
-        return job;
-    }
-    public JobPost getpost(int postId) {
-        for(JobPost jobs: job){
-            if(jobs.getPostId()==postId)
-                return jobs;
-        }
-        return null;
-    }
-
-    public JobPost addjob(JobPost jobpost) {
-        job.add(jobpost);
-        return new JobPost();
-    }
-
-    public JobPost update(int postId, JobPost updatepost) {
-
-        for( JobPost post:job) {
-            if(post.getPostId()==postId){
-            post.setPostId(updatepost.getPostId());
-            post.setPostProfile(updatepost.getPostProfile());
-            post.setPostDesc(updatepost.getPostDesc());
-            post.setReqExperience(updatepost.getReqExperience());
-            post.setPostTechStack(updatepost.getPostTechStack());
-            }
-        }
-
-       return null;
-    }
+//        for( JobPost post:job) {
+//            if(post.getPostId()==postId){
+//            post.setPostId(updatepost.getPostId());
+//            post.setPostProfile(updatepost.getPostProfile());
+//            post.setPostDesc(updatepost.getPostDesc());
+//            post.setReqExperience(updatepost.getReqExperience());
+//            post.setPostTechStack(updatepost.getPostTechStack());
+//            }
+//        }
+//
+//       return null;
+//    }
 }

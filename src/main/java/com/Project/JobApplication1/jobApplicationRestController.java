@@ -31,4 +31,8 @@ public class jobApplicationRestController {
     public JobPost update(@PathVariable("postId") int postid , @RequestBody JobPost updatepost){
       return  service.update(postid,updatepost);
     }
+@GetMapping("/load")
+    public String loadData(JobPost jobPost){
+        return service.loaddata(jobPost);
+    }
 }
